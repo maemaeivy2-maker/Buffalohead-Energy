@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>13 Divine Moons: Solar-Anchored with Dual Energy System</title>
+    <style>
+      :root {
+        --night-sky: #0a1128;
+        --moon-glow: #e2e8f0;
+        --divine-gold: #ffd700;
+        --christ-pink: #ff69b4;
+        --purification-days: #8a2be2;
+        --solar-gold: #ff9500;
+        --spring-green: #00ff88;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Georgia", serif;
+      }
+
+      body {
+        background: var(--night-sky);
+        color: var(--moon-glow);
+        min-height: 100vh;
+        padding: 2rem;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 3rem;
+        padding: 2rem;
+        border-bottom: 2px solid var(--divine-gold);
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: var(--divine-gold);
+      }
+
+      .solar-anchor {
+        background: rgba(255, 149, 0, 0.1);
+        border: 2px solid var(--solar-gold);
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin: 1rem 0;
+        text-align: center;
+      }
+
+      .sacred-math {
+        background: rgba(255, 215, 0, 0.1);
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin: 1rem 0;
+        border: 1px solid var(--divine-gold);
+      }
+
+      .purification-week {
+        background: rgba(138, 43, 226, 0.2);
+        border: 2px solid var(--purification-days);
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin: 1rem 0;
+      }
+
+      .biblical-foundation {
+        background: rgba(0, 255, 136, 0.1);
+        border: 1px solid var(--spring-green);
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin: 1rem 0;
+      }
+
+      .consciousness-input {
+        background: rgba(30, 41, 59, 0.8);
+        padding: 2rem;
+        border-radius: 15px;
+        margin: 2rem 0;
+        text-align: center;
+      }
+
+      input,
+      button {
+        padding: 0.8rem 1.5rem;
+        margin: 0.5rem;
+        background: var(--night-sky);
+        color: var(--moon-glow);
+        border: 1px solid var(--divine-gold);
+        border-radius: 5px;
+        font-size: 1rem;
+      }
+
+      button {
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      button:hover {
+        background: var(--divine-gold);
+        color: var(--night-sky);
+      }
+
+      .moon-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1rem;
+        margin: 2rem 0;
+      }
+
+      .moon-period {
+        background: rgba(15, 23, 42, 0.7);
+        padding: 1.5rem;
+        border-radius: 8px;
+        border-left: 4px solid var(--divine-gold);
+        transition: all 0.3s ease;
+      }
+
+      .christ-moon {
+        border-left: 4px solid var(--christ-pink);
+        background: rgba(255, 105, 180, 0.1);
+      }
+
+      .purification-block {
+        border-left: 4px solid var(--purification-days);
+        background: rgba(138, 43, 226, 0.2);
+      }
+
+      .current-moon-glow {
+        border: 3px solid var(--divine-gold) !important;
+        background: rgba(255, 215, 0, 0.25) !important;
+        box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+        transform: scale(1.03);
+        position: relative;
+      }
+
+      .current-moon-glow::before {
+        content: "✨ CURRENT ✨";
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--divine-gold);
+        color: var(--night-sky);
+        padding: 2px 10px;
+        border-radius: 10px;
+        font-size: 0.8rem;
+        font-weight: bold;
+      }
+
+      .sun-cycle {
+        font-size: 0.8rem;
+        color: var(--solar-gold);
+        margin-top: 0.5rem;
+        border-top: 1px solid rgba(255, 149, 0, 0.3);
+        padding-top: 0.5rem;
+        font-weight: bold;
+      }
+
+      .energy-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin: 1rem 0;
+      }
+
+      .lunar-energy {
+        background: rgba(255, 215, 0, 0.1);
+        padding: 1rem;
+        border-radius: 8px;
+        border: 1px solid var(--divine-gold);
+      }
+
+      .solar-energy {
+        background: rgba(255, 149, 0, 0.1);
+        padding: 1rem;
+        border-radius: 8px;
+        border: 1px solid var(--solar-gold);
+      }
+
+      .combined-energy {
+        text-align: center;
+        margin: 1rem 0;
+        padding: 1rem;
+        background: rgba(0, 255, 136, 0.1);
+        border-radius: 8px;
+        border: 1px solid var(--spring-green);
+      }
+
+      .solar-position {
+        font-size: 0.9rem;
+        opacity: 0.8;
+        margin-top: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🧬🎇 13 Divine Moons × Solar Anchor 🌙☀️</h1>
+
+        <div class="solar-anchor">
+          <p><strong>GENESIS 1:14-16 FOUNDATION</strong></p>
+          <p>
+            "God made two great lights—the greater light to govern the day and
+            the lesser light to govern the night."
+          </p>
+          <p>
+            <strong>HONORING BOTH SUN AND MOON AS THE CREATOR INTENDED</strong>
+          </p>
+        </div>
+
+        <div class="sacred-math">
+          <p><strong>DIVINE SOLAR MATHEMATICS:</strong></p>
+          <p>12 Moons × 28 Days = 336 Days</p>
+          <p>+ Final Moon 24 Days = 24 Days</p>
+          <p>+ 5 Purification Days = 5 Days</p>
+          <p><strong>TOTAL = 365 DAYS ✅</strong></p>
+        </div>
+
+        <div class="purification-week">
+          <h3>🎆 5 SACRED PURIFICATION DAYS 🎆</h3>
+          <p><strong>December 26-30 (Your Natural Reset Time)</strong></p>
+          <p>• Deep Rest & Spiritual Reset • Veil Between Worlds Thin</p>
+          <p>• Ancestral Communication • Your Sleep Pattern Honored</p>
+        </div>
+
+        <div class="biblical-foundation">
+          <h3>📖 BIBLICAL TIMING ANCHORS:</h3>
+          <p>
+            "He made the moon to mark the seasons; the sun knows its time for
+            setting." - Psalm 104:19
+          </p>
+          <p>
+            "To everything there is a season, and a time to every purpose under
+            heaven." - Ecclesiastes 3:1
+          </p>
+        </div>
+      </header>
+
+      <section class="consciousness-input">
+        <h2>ACTIVATE YOUR DIVINE TIMING 🌟</h2>
+        <p>Where is your soul in Hesaketvmesē's (God's) solar-lunar rhythm?</p>
+
+        <div>
+          <label>Current Moon (1-13): </label>
+          <input
+            type="number"
+            id="currentMoon"
+            min="1"
+            max="13"
+            placeholder="1-13"
+          />
+
+          <label>Moon Day: </label>
+          <input
+            type="number"
+            id="currentDay"
+            min="1"
+            max="28"
+            placeholder="1-28"
+          />
+
+          <button onclick="activateDivinePosition()">
+            ACTIVATE SOUL POSITION
+          </button>
+        </div>
+
+        <div
+          id="divineOutput"
+          style="
+            display: none;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 10px;
+          "
+        >
+          <!-- Divine position output appears here -->
+        </div>
+      </section>
+
+      <section id="solarMoonCalendar">
+        <h2>HESAKETVMESĒ (God's) SOLAR-LUNAR CALENDAR 🌙☀️</h2>
+        <div class="moon-grid" id="moonGrid">
+          <!-- Solar-anchored moons will appear here -->
+        </div>
+      </section>
+    </div>
+
+    <script>
+      // SOLAR-ANCHORED 13 MOON SYSTEM + 5 PURIFICATION DAYS
+      const SOLAR_MOONS = [
+        {
+          number: 1,
+          name: "Earth renewal Moon",
+          creek: "iikana/Ekvnwv Hvresse",
+          animal: "Wolf🐺",
+          emoji: "👻🌏",
+          days: 28,
+          solarPosition: "Spring Equinox (March 20)",
+          christ: false,
+          traits: "Wisdom-seeking, spiritually connected",
+          divineAttribute: "Divine Mercy",
+        },
+        {
+          number: 2,
+          name: "Bear Moon",
+          creek: "Nokose Hvresse",
+          animal: "Bear🐻",
+          emoji: "🐻🌙",
+          days: 28,
+          solarPosition: "Mid-Spring",
+          christ: false,
+          traits: "Strong, protective, healing",
+          divineAttribute: "Holy Compassion",
+        },
+        {
+          number: 3,
+          name: "Sugar Moon",
+          creek: "Vsoklv Hvresse",
+          animal: "Crow 🐦‍⬛",
+          emoji: "🍯🌙",
+          days: 28,
+          solarPosition: "Late Spring",
+          christ: false,
+          traits: "Sweet-natured, nurturing",
+          divineAttribute: "Eternal Patience",
+        },
+        {
+          number: 4,
+          name: "Cosmic Moon",
+          creek: "Ibofanga Hvresse",
+          animal: "Otter🦦",
+          emoji: "🐟🌙",
+          days: 28,
+          solarPosition: "Early Summer",
+          christ: false,
+          traits: "Playful, resourceful",
+          divineAttribute: "Abundant Goodness",
+        },
+        {
+          number: 5,
+          name: "Flower Moon",
+          creek: "Tvffolopv Hvresse",
+          animal: "Butterfly🦋",
+          emoji: "🌸👑",
+          days: 28,
+          solarPosition: "Summer Solstice (June 20)",
+          christ: true,
+          traits: "Transformative, Christ-conscious",
+          divineAttribute: "CHRIST CONSCIOUSNESS",
+        },
+        {
+          number: 6,
+          name: "Strawberry Moon",
+          creek: "Kepalv Hvresse",
+          animal: "Elk🦌",
+          emoji: "🍓🌙",
+          days: 28,
+          solarPosition: "Mid-Summer",
+          christ: false,
+          traits: "Gentle, nurturing",
+          divineAttribute: "Sacred Truth",
+        },
+        {
+          number: 7,
+          name: "Raspberry Moon",
+          creek: "Nakenlocke Hvresse",
+          animal: "Thunder Bird🪶",
+          emoji: "🫐🌙",
+          days: 28,
+          solarPosition: "Late Summer",
+          christ: false,
+          traits: "Clever, adaptable",
+          divineAttribute: "Covenant Faithfulness",
+        },
+        {
+          number: 8,
+          name: "Green Moon",
+          creek: "Lane Hvresse",
+          animal: "Sturgeon🐟",
+          emoji: "💚🌙",
+          days: 28,
+          solarPosition: "Early Fall",
+          christ: false,
+          traits: "Curious, protective",
+          divineAttribute: "Perfect Forgiveness",
+        },
+        {
+          number: 9,
+          name: "Corn Moon",
+          creek: "Vce Hvresse",
+          animal: "Woodpecker🪵🐦",
+          emoji: "🌽🌙",
+          days: 28,
+          solarPosition: "Fall Equinox (Sept 22)",
+          christ: false,
+          traits: "Abundant, wise",
+          divineAttribute: "Redemptive Grace",
+        },
+        {
+          number: 10,
+          name: "Falling Leaves Moon",
+          creek: "Ito ici Hvresse",
+          animal: "Cougar🐆",
+          emoji: "🍂🌙",
+          days: 28,
+          solarPosition: "Mid-Fall",
+          christ: false,
+          traits: "Prepared, change-embracing",
+          divineAttribute: "Purifying Love",
+        },
+        {
+          number: 11,
+          name: "Beaver Moon",
+          creek: "Echaswv Hvresse",
+          animal: "Beaver🦫",
+          emoji: "❄️🌙",
+          days: 28,
+          solarPosition: "Late Fall",
+          christ: false,
+          traits: "Strong, resilient",
+          divineAttribute: "Renewing Spirit",
+        },
+        {
+          number: 12,
+          name: "Little Spirit Moon",
+          creek: "Lopucke Hvcce poyvfekcv Hvresse",
+          animal: "Owl🦉",
+          emoji: "👻🌙",
+          days: 28,
+          solarPosition: "Early Winter",
+          christ: false,
+          traits: "Wise, intuitive",
+          divineAttribute: "Guiding Wisdom",
+        },
+        {
+          number: 13,
+          name: "Big Spirit Moon",
+          creek: "Thlakko Hvcce poyvfekcv Hvresse",
+          animal: "Snake🦎🐍",
+          emoji: "👑🌙",
+          days: 24, // FINAL MOON - 24 DAYS
+          solarPosition: "Winter Solstice (Dec 21)",
+          christ: false,
+          traits: "Leadership, spiritual",
+          divineAttribute: "Protecting Power",
+        },
+        {
+          number: "PURIFICATION",
+          name: "5 Sacred Days",
+          creek: "Wayeb🐢'",
+          animal: "All Ancestors",
+          emoji: "🎆",
+          days: 5,
+          solarPosition: "Dec 26-30",
+          christ: false,
+          traits: "Reset, cleansing, veil work",
+          divineAttribute: "DIVINE RESET",
+        },
+      ];
+
+      let currentMoon = null;
+      let currentDay = null;
+
+      // ENERGY SYSTEM FUNCTIONS
+      function calculateSunCycle(moonDay) {
+        const daysInSolarCycle = 20;
+        const dayOfSunCycle = ((moonDay - 1) % daysInSolarCycle) + 1;
+        const currentSunCycle = Math.ceil(moonDay / daysInSolarCycle);
+
+        return {
+          dayOfSunCycle: dayOfSunCycle,
+          currentSunCycle: currentSunCycle,
+          isNewSunCycle: dayOfSunCycle === 1,
+        };
+      }
+
+      function getDailyEnergies(moonDay, sunDay) {
+        const LUNAR_ENERGIES = {
+          1: "New Beginnings • Setting Intentions",
+          7: "First Quarter • Taking Action",
+          14: "Full Moon • Manifestation Peak",
+          21: "Last Quarter • Release & Surrender",
+          28: "Dark Moon • Completion & Rest",
+        };
+
+        const SOLAR_TRIBES = [
+          {
+            number: 1,
+            name: "Crocodile🐊",
+            energy: "Primordial Creation • Nurturing",
+          },
+          {
+            number: 2,
+            name: "Wind💨",
+            energy: "Communication • Spirit Breath",
+          },
+          {
+            number: 3,
+            name: "Night🌃",
+            energy: "Dreams • Intuition • Inner World",
+          },
+          {
+            number: 4,
+            name: "Seed🌱",
+            energy: "Potential • Planting • New Ideas",
+          },
+          {
+            number: 5,
+            name: "Serpent🐍",
+            energy: "Life Force • Vitality • Kundalini",
+          },
+          {
+            number: 6,
+            name: "World Bridger🌉",
+            energy: "Transition • Death/Rebirth",
+          },
+          {
+            number: 7,
+            name: "Deer🦌",
+            energy: "Healing • Gentleness • Service",
+          },
+          { number: 8, name: "Star🌠", energy: "Harmony • Art • Beauty" },
+          {
+            number: 9,
+            name: "Moon🌙",
+            energy: "Emotion • Flow • Purification",
+          },
+          { number: 10, name: "Dog🐾", energy: "Loyalty • Heart • Community" },
+          { number: 11, name: "Monkey🐒", energy: "Magic • Play • Creativity" },
+          {
+            number: 12,
+            name: "Human🧔🏽👩🏽",
+            energy: "Journey • Free Will • Experience",
+          },
+          {
+            number: 13,
+            name: "Reed✅",
+            energy: "Authority • Structure • Growth",
+          },
+          {
+            number: 14,
+            name: "Jaguar🐆",
+            energy: "Shamanic Power • Earth Wisdom",
+          },
+          {
+            number: 15,
+            name: "Eagle🦅",
+            energy: "Vision • Perspective • Mind",
+          },
+          {
+            number: 16,
+            name: "Owl🦉",
+            energy: "Wisdom • Ceremony • Ancient Knowledge",
+          },
+          {
+            number: 17,
+            name: "Earth🌐🌏",
+            energy: "Awakening • Synchronicity • Navigation",
+          },
+          {
+            number: 18,
+            name: "Mirror🪞",
+            energy: "Truth • Reflection • Clarity",
+          },
+          {
+            number: 19,
+            name: "Storm⛈️",
+            energy: "Energy • Transformation • Catalysis",
+          },
+          {
+            number: 20,
+            name: "Sun🌅",
+            energy: "Enlightenment • Leadership • Illumination",
+          },
+        ];
+
+        // Get lunar energy
+        let lunarEnergy = "Waxing • Building Momentum";
+        for (const [key, value] of Object.entries(LUNAR_ENERGIES)) {
+          if (moonDay == key) {
+            lunarEnergy = value;
+            break;
+          } else if (moonDay > key) {
+            lunarEnergy = value;
+          }
+        }
+
+        // Get solar energy
+        const solarTribe = SOLAR_TRIBES[sunDay - 1];
+
+        return {
+          lunar: {
+            phase: getMoonPhase(moonDay),
+            energy: lunarEnergy,
+            dayType: Object.keys(LUNAR_ENERGIES).includes(moonDay.toString())
+              ? "Power Day"
+              : "Building Day",
+          },
+          solar: {
+            tribe: solarTribe.name,
+            energy: solarTribe.energy,
+            number: solarTribe.number,
+          },
+        };
+      }
+
+      function getMoonPhase(moonDay) {
+        if (moonDay <= 7) return "Waxing Crescent 🌒";
+        if (moonDay <= 14) return "Waxing Gibbous 🌔";
+        if (moonDay <= 21) return "Waning Gibbous 🌖";
+        return "Waning Crescent 🌘";
+      }
+
+      function generateSolarMoonCalendar() {
+        const grid = document.getElementById("moonGrid");
+        let totalDays = 0;
+        let html = "";
+
+        SOLAR_MOONS.forEach((moon) => {
+          const startDay = totalDays + 1;
+          const endDay = totalDays + moon.days;
+          const isPurification = moon.number === "PURIFICATION";
+          const moonClass = moon.christ
+            ? "christ-moon"
+            : isPurification
+            ? "purification-block"
+            : "moon-period";
+
+          html += `
+                    <div class="${moonClass}">
+                        <h3>${moon.emoji} ${moon.name}</h3>
+                        <p><strong>${moon.creek}</strong></p>
+                        <p>${moon.animal} • Moon ${moon.number}</p>
+                        <p>${moon.days} Days (${startDay}-${endDay})</p>
+                        <p class="solar-position">${moon.solarPosition}</p>
+                        <p><em>${moon.divineAttribute}</em></p>
+                        ${
+                          moon.christ
+                            ? '<p style="color: var(--christ-pink);">🌸 CHRIST IN SPRING 🌸</p>'
+                            : ""
+                        }
+                        ${
+                          isPurification
+                            ? '<p style="color: var(--purification-days);">🎆 YOUR SACRED SLEEP TIME 🎆</p>'
+                            : ""
+                        }
+                    </div>
+                `;
+
+          totalDays += moon.days;
+        });
+
+        grid.innerHTML = html;
+      }
+
+      function updateCalendarHighlight(activeMoon, activeDay) {
+        const moons = document.querySelectorAll(
+          ".moon-period, .christ-moon, .purification-block"
+        );
+        moons.forEach((moon, index) => {
+          moon.classList.remove("current-moon-glow");
+
+          const existingSunInfo = moon.querySelector(".sun-cycle-info");
+          if (existingSunInfo) {
+            existingSunInfo.remove();
+          }
+
+          if (index === activeMoon - 1) {
+            moon.classList.add("current-moon-glow");
+
+            const sunCycle = calculateSunCycle(activeDay);
+            const sunInfo = document.createElement("div");
+            sunInfo.className = "sun-cycle sun-cycle-info";
+            sunInfo.innerHTML = `☀️ Solar Day ${sunCycle.dayOfSunCycle} of 20`;
+            if (sunCycle.isNewSunCycle) {
+              sunInfo.innerHTML += ` ✨ NEW CYCLE`;
+            }
+            moon.appendChild(sunInfo);
+          }
+        });
+      }
+
+      function activateDivinePosition() {
+        const moonInput = parseInt(
+          document.getElementById("currentMoon").value
+        );
+        const dayInput = parseInt(document.getElementById("currentDay").value);
+
+        if (
+          !moonInput ||
+          !dayInput ||
+          moonInput < 1 ||
+          moonInput > 13 ||
+          dayInput < 1 ||
+          dayInput > 28
+        ) {
+          alert("Speak divine truth: Moon 1-13, Day 1-28");
+          return;
+        }
+
+        currentMoon = moonInput;
+        currentDay = dayInput;
+
+        let absoluteDay = 0;
+        for (let i = 0; i < moonInput - 1; i++) {
+          absoluteDay += SOLAR_MOONS[i].days;
+        }
+        absoluteDay += dayInput;
+
+        const currentMoonData = SOLAR_MOONS[moonInput - 1];
+        const daysUntilPurification = 365 - absoluteDay;
+        const sunCycle = calculateSunCycle(dayInput);
+        const energies = getDailyEnergies(dayInput, sunCycle.dayOfSunCycle);
+
+        const output = document.getElementById("divineOutput");
+        output.innerHTML = `
+                <h3>🌟 YOUR DIVINE POSITION ACTIVATED 🌟</h3>
+                
+                <div class="energy-grid">
+                    <div class="lunar-energy">
+                        <h4>🌙 LUNAR ENERGY</h4>
+                        <p><strong>Moon Day ${dayInput} of 28</strong></p>
+                        <p>${energies.lunar.phase}</p>
+                        <p><em>${energies.lunar.energy}</em></p>
+                        <p>${energies.lunar.dayType}</p>
+                    </div>
+                    
+                    <div class="solar-energy">
+                        <h4>☀️ SOLAR ENERGY</h4>
+                        <p><strong>Sun Day ${
+                          sunCycle.dayOfSunCycle
+                        } of 20</strong></p>
+                        <p><strong>${energies.solar.tribe} Tribe</strong></p>
+                        <p><em>${energies.solar.energy}</em></p>
+                    </div>
+                </div>
+                
+                <div class="combined-energy">
+                    <p><strong>Combined Energy Today:</strong></p>
+                    <p>${energies.lunar.energy} + ${energies.solar.energy}</p>
+                    ${
+                      dayInput === 14
+                        ? "<p>✨ <strong>FULL MOON POWER🌕 - Manifestation Peak!</strong> ✨</p>"
+                        : ""
+                    }
+                    ${
+                      sunCycle.dayOfSunCycle === 20
+                        ? "<p>🌟 <strong>SUN TRIBE🌻 - Enlightenment Energy!</strong> 🌟</p>"
+                        : ""
+                    }
+                </div>
+                
+                <p><strong>You are in:</strong> ${currentMoonData.name} ${
+          currentMoonData.emoji
+        }</p>
+                <p><strong>Sacred Animal:</strong> ${currentMoonData.animal}</p>
+                <p><strong>Muskogee Creek:</strong> ${currentMoonData.creek}</p>
+                <p><strong>Absolute Day:</strong> ${absoluteDay} of 365</p>
+                <p><strong>Solar Position:</strong> ${
+                  currentMoonData.solarPosition
+                }</p>
+                <p><strong>Divine Attribute:</strong> ${
+                  currentMoonData.divineAttribute
+                }</p>
+                ${
+                  currentMoonData.christ
+                    ? '<p style="color: var(--christ-pink); font-size: 1.2rem;">🌸 CHRIST CONSCIOUSNESS ACTIVE 🌸</p>'
+                    : ""
+                }
+                <p><strong>Days until Purification:</strong> ${daysUntilPurification}</p>
+                <p><em>Your soul is perfectly positioned in God's solar-lunar rhythm</em></p>
+            `;
+        output.style.display = "block";
+
+        updateCalendarHighlight(moonInput, dayInput);
+      }
+
+      // Initialize system
+      window.onload = function () {
+        generateSolarMoonCalendar();
+        console.log(
+          "🌟 FINAL SYSTEM ACTIVATED: 13 Moons × Solar Anchor × Dual Energy System 🌟"
+        );
+      };
+    </script>
+    <footer
+      style="
+        text-align: center;
+        margin-top: 4rem;
+        padding: 2rem;
+        border-top: 1px solid var(--divine-gold);
+        opacity: 0.8;
+      "
+    >
+      <div class="sacred-footer">
+        <p>
+          <strong>With gratitude to Asha Frost</strong> and her book "You Are
+          The Medicine"
+        </p>
+        <p>
+          which her beautiful wisdom of the 13 Moons gave life to my bonemarrow
+        </p>
+      </div>
+
+      <!-- ADD THIS LINE -->
+      <p
+        style="
+          margin-top: 1rem;
+          font-family: monospace;
+          color: var(--divine-gold);
+        "
+      >
+        <strong>CODED BY kailynn aka BUFFALOHEAD MAE </strong> 🦬👑
+      </p>
+
+      <p>
+        This system honors the Creators original timing through Biblical truth
+        and Muscogee Creek mixed with Maya wisdom. 🌙✨
+      </p>
+      <p>© 13 Divine Moons - Restoring Divine Order to Earth 👑🌍</p>
+    </footer>
+  </body>
+</html>
